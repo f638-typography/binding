@@ -1,0 +1,24 @@
+
+:root {
+	--color-bg: aliceblue;
+	--color-accent: blue;
+
+	--size-md: 1.1rem;
+	--ratio: 1.25;
+}
+
+body {
+	font-family: var(--font-header);
+}
+
+em {
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+	font-style: normal;
+}
+
+ul,
+ol {
+	list-style: revert;
+	padding-inline-start: var(--size-lg);
+}
