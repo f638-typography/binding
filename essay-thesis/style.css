@@ -1,0 +1,25 @@
+:root {
+	--font-header: var(--font-text);
+
+	--color-bg: floralwhite;
+	--color-text: darkslategray;
+	--color-accent: firebrick;
+
+	--size-md: 1.25rem;
+}
+
+body {
+	text-align: center;
+}
+
+h2 {
+	font-size: var(--size-md);
+	font-style: italic;
+	font-weight: normal;
+	color: var(--color-subtle);
+}
+
+h2,
+p {
+	margin-block-end: 0;
+}
