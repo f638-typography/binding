@@ -1,0 +1,20 @@
+:root {
+	--color-bg: navy;
+	--color-text: ivory;
+	--color-accent: gold;
+
+	--ratio: 2;
+}
+
+h1 {
+	font-weight: 200;
+}
+
+aside,
+p {
+	color: var(--color-subtle);
+
+	&:hover {
+		color: var(--color-text);
+	}
+}
