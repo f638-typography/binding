@@ -4,6 +4,10 @@
 	--color-accent: gold;
 
 	--ratio: 2;
+
+	--font-text: "Jost", serif;
+	--font-header: "Poiret One", sans-serif;
+
 }
 
 h1 {

@@ -5,6 +5,9 @@
 
 	--size-md: 1.1rem;
 	--ratio: 1.25;
+
+	--font-text: "IBM Plex Sans", serif;
+	--font-header: "IBM Plex Mono", sans-serif;
 }
 
 body {

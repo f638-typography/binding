@@ -1,9 +1,13 @@
 :root {
-	--font-header: var(--font-text);
-
 	--color-bg: floralwhite;
 	--color-text: darkslategray;
 	--color-accent: firebrick;
+
+	--font-text: "IM Fell English", serif;
+	--font-header: "Playwrite US Modern", sans-serif;
+	/*
+	--font-header: var(--font-text);
+	*/
 
 	--size-md: 1.25rem;
 }
