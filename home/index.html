@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="en-us">
 	<head>
 		<style>
 			@import "../styles/reset.css" layer(reset);
@@ -6,18 +7,43 @@
 			@import "style.css" layer(style);
 		</style>
 
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Binding</title>
 	</head>
+
+	<!--
+		Adding doctype, lang and charset, as on our three texts
+		Adding <header>, <main> and <nav>
+		Adding the author and the year of each text, with <time>
+	-->
+
 	<body>
-		<h1>Binding</h1>
-		<p>Links below</p>
-		<ul>
-			<li>
-				<a href="../interface-writing/index.html">Interface Writing</a>
-			</li>
-			<li><a href="../hover-states/index.html">Hover States</a></li>
-			<li><a href="../essay-thesis/index.html">Essay/Thesis</a></li>
-		</ul>
+		<header>
+			<p>Links below</p>
+			<h1>Binding</h1>
+		</header>
+		<main>
+			<nav aria-label="Texts">
+				<ul>
+					<li class="interface-writing">
+						<a href="../interface-writing/index.html"
+							>Interface Writing</a
+						>
+						<p>Nicole Fenton, <time datetime="2014">2014</time></p>
+					</li>
+					<li class="hover-states">
+						<a href="../hover-states/index.html">Hover States</a>
+						<p>Rob Giampietro, <time datetime="2013">2013</time></p>
+					</li>
+					<li class="essay-thesis">
+						<a href="../essay-thesis/index.html">Essay/Thesis</a>
+						<p>
+							Chappell Ellison, <time datetime="2016">2016</time>
+						</p>
+					</li>
+				</ul>
+			</nav>
+		</main>
 	</body>
 </html>

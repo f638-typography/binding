@@ -18,15 +18,42 @@
 	<!-- HTML Copy of manuscript: to review comments and structure. Spread as reference-->
 
 	<body>
+		<!--
+			Adding <nav> to link our four pages, inside the <header>
+			nav: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav
+
+			aria-current for the page we are on: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current
+			aria-label: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label
+
+			aria-label vs. arialabelby: https://www.a11y-collective.com/blog/aria-label-vs-aria-labelledby/
+			aria-label: providing an accessible name when no visible text label is present
+			arialabelby: another element on the page that contains the label text
+		-->
 		<header>
-			<a href="https://www.nicolefenton.com/interface-writing/"
-				>Nicole Fenton</a
-			>
+			<nav class="binding" aria-label="Binding">
+				<ul>
+					<li><a href="../home/index.html">Binding</a></li>
+					<li>
+						<a
+							href="../interface-writing/index.html"
+							aria-current="page"
+							>Interface Writing</a
+						>
+					</li>
+					<li>
+						<a href="../hover-states/index.html">Hover States</a>
+					</li>
+					<li>
+						<a href="../essay-thesis/index.html">Essay/Thesis</a>
+					</li>
+				</ul>
+			</nav>
+			<p><time datetime="2014-08-02">August 2, 2014</time></p>
+			<h1>Interface Writing: Code for Humans</h1>
 		</header>
 		<main>
 			<article id="article">
 				<header>
-					<h1>Interface Writing: Code for Humans</h1>
 					<p>
 						I gave this talk at
 						<a href="https://burlingtonrubyconference.com"
@@ -38,7 +65,7 @@
 						>
 						in Charlotte, North Carolina.
 					</p>
-					<nav>
+					<nav aria-label="On this page">
 						<ul>
 							<li><a href="#article">Article</a></li>
 							<li><a href="#response">Response</a></li>
@@ -636,9 +663,6 @@
 						<p>Thank you.</p>
 					</section>
 				</section>
-				<footer>
-					<time datetime="2014-08-02">August 2, 2014</time>
-				</footer>
 			</article>
 			<aside id="further-reading">
 				<h2>Further Reading</h2>
@@ -695,8 +719,16 @@
 				</ul>
 			</aside>
 		</main>
+		<!--
+			Adding <footer>
+		-->
 		<footer>
-			<a href="#top">Back to top</a>
+			<p class="author">
+				<a href="https://www.nicolefenton.com/interface-writing/"
+					>Nicole Fenton</a
+				>
+			</p>
+			<p><a href="#top">Back to top</a></p>
 		</footer>
 	</body>
 </html>

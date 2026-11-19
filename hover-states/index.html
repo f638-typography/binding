@@ -15,27 +15,38 @@
 	<!-- Original: https://linedandunlined.com/archive/hover-states/ -->
 
 	<body>
+		<!--
+			Adding <nav> to link our four pages, inside the <header>
+			aria-current etc. as per interface-writing commment above <body>
+		-->
+		<header>
+			<nav class="binding" aria-label="Binding">
+				<ul>
+					<li><a href="../home/index.html">Binding</a></li>
+					<li>
+						<a href="../interface-writing/index.html"
+							>Interface Writing</a
+						>
+					</li>
+					<li>
+						<a href="../hover-states/index.html" aria-current="page"
+							>Hover States</a
+						>
+					</li>
+					<li>
+						<a href="../essay-thesis/index.html">Essay/Thesis</a>
+					</li>
+				</ul>
+			</nav>
+			<p><time datetime="2013">2013</time>, Writing</p>
+			<h1 id="title">Hover States</h1>
+		</header>
 		<main>
 			<article class="limit grid">
-				<aside class="content-sidebar">
-					<!--
-						Adding datetime to <time>
-						Removing the empty <li class="for"> of the original
-					-->
-					<ul class="meta">
-						<li class="date"><time datetime="2013">2013</time></li>
-						<li class="format">Writing</li>
-					</ul>
-				</aside>
-
 				<!--
 					Replacing the <div> with a <section>
 				-->
 				<section class="content-main">
-					<header>
-						<h1 id="title">Hover States</h1>
-					</header>
-
 					<!--
 						Adding <abbr> for abbreviations
 						Adding <dfn> for definitions
@@ -136,14 +147,16 @@
 						or standing still. They are circling each other. They
 						are <em>hovering</em>. You can never hover forever.
 					</p>
-
-					<footer>
-						<p class="copyright">
-							© Copyright Rob Giampietro 2000–2025.
-						</p>
-					</footer>
 				</section>
 			</article>
 		</main>
+		<!--
+			Adding <footer>
+		-->
+		<footer>
+			<p class="author">Rob Giampietro</p>
+			<p><a href="#top">Back to top</a></p>
+			<p class="copyright">© Copyright Rob Giampietro 2000–2025.</p>
+		</footer>
 	</body>
 </html>

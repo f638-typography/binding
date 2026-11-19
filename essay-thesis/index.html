@@ -17,15 +17,31 @@
 	-->
 
 	<body>
+		<!--
+			Adding <nav> to link our four pages, inside the <header>
+			aria-current etc. as per interface-writing commment above <body>
+		-->
 		<header>
+			<nav class="binding" aria-label="Binding">
+				<ul>
+					<li><a href="../home/index.html">Binding</a></li>
+					<li>
+						<a href="../interface-writing/index.html"
+							>Interface Writing</a
+						>
+					</li>
+					<li>
+						<a href="../hover-states/index.html">Hover States</a>
+					</li>
+					<li>
+						<a href="../essay-thesis/index.html" aria-current="page"
+							>Essay/Thesis</a
+						>
+					</li>
+				</ul>
+			</nav>
+			<p><time datetime="2016-04-19">April 19, 2016</time></p>
 			<h1>If You Are Writing an Essay or a Thesis</h1>
-			<!--
-				Adding <time>
-			-->
-			<p>
-				Chappell Ellison,
-				<time datetime="2016-04-19">April 19, 2016</time>
-			</p>
 		</header>
 
 		<!--
@@ -152,5 +168,12 @@
 				<p>As <em>no one else</em> can.</p>
 			</section>
 		</main>
+		<!--
+			Adding <footer>
+		-->
+		<footer>
+			<p class="author">Chappell Ellison</p>
+			<p><a href="#top">Back to top</a></p>
+		</footer>
 	</body>
 </html>
