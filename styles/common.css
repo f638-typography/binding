@@ -47,13 +47,27 @@
 		https://typography-interaction-2627.github.io/topic/box-model/#constrained-by-min-max-
 	*/
 	--width-page: 62ch;
+
+	/*
+		the room left and right of the text: half of what the window has
+		left over, and never less than --size-md
+
+		https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max
+		largest (most positive) expression value used as the value of the property to which it is assigned.
+
+		would be negtive on mobile if we did not define --size-md
+
+		https://www.reddit.com/r/css/comments/1prly4k/how_to_center_the_whole_website/
+		comment: be_my_plaything
+
+	*/
+	--width-side: max(var(--size-md), (100% - var(--width-page)) / 2);
 }
 
 body {
 	/* a thick line opens at the top and bottom */
 	border-block: var(--line-lg) var(--line-style) var(--color-accent);
 
-	padding-inline: var(--size-md);
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	font-family: var(--font-text);
@@ -62,18 +76,11 @@ body {
 	line-height: 1.6;
 }
 
-/*
-	setting max width to characters
-	on a small screen we make use of the most width
-
-	auto calculates space for inline
-	does not apply to mobile as max-width is not reached
-*/
+/* using padding instead of margin to make lines overflow */
 body > header,
 main,
 body > footer {
-	max-width: var(--width-page);
-	margin-inline: auto;
+	padding-inline: var(--width-side);
 }
 
 main {
