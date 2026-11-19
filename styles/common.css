@@ -34,6 +34,14 @@
 	--weight-md: 400;
 	--weight-lg: 700;
 
+	/* define thickness of each line */
+	--line-md: calc(var(--size-md) / 5);
+	--line-sm: calc(var(--line-md) / 3);
+	--line-lg: calc(var(--line-md) * 2);
+
+	/* solid by default */
+	--line-style: solid;
+
 	/*
 		62 characters wide
 		https://typography-interaction-2627.github.io/topic/box-model/#constrained-by-min-max-
@@ -42,6 +50,9 @@
 }
 
 body {
+	/* a thick line opens at the top and bottom */
+	border-block: var(--line-lg) var(--line-style) var(--color-accent);
+
 	padding-inline: var(--size-md);
 	background-color: var(--color-bg);
 	color: var(--color-text);
@@ -89,10 +100,12 @@ body > footer {
 
 body > header {
 	padding-block: var(--size-xl) var(--size-title);
+	border-block-end: var(--line-md) var(--line-style) var(--color-accent);
 }
 
 body > footer {
 	padding-block: var(--size-title) var(--size-xl);
+	border-block-start: var(--line-md) var(--line-style) var(--color-accent);
 }
 
 /*
@@ -136,7 +149,6 @@ footer .author {
 		https://typography-interaction-2627.github.io/topic/responsive/#clamp
 	*/
 	font-size: min(var(--size-title), 10vw);
-
 }
 
 /* the same room at the top and at the end */
@@ -175,8 +187,12 @@ p {
 	text-wrap: pretty;
 }
 
+/* makign line styles the same per page e.g. hover always dashed etc. */
 a {
-	text-decoration: underline;
+	text-decoration-line: underline;
+	text-decoration-style: var(--line-style);
+	text-decoration-thickness: var(--line-sm);
+	text-underline-offset: 0.25em; /* move line down to sit below */
 }
 
 strong {
@@ -201,6 +217,7 @@ dfn {
 */
 abbr[title] {
 	text-decoration: underline dotted;
+	text-decoration-thickness: var(--line-sm);
 	text-underline-offset: 0.25em;
 	cursor: help;
 }
@@ -225,6 +242,7 @@ figure {
 /* what a linked picture shows */
 .example {
 	padding-inline-start: 2ch;
+	border-inline-start: var(--line-sm) var(--line-style) var(--color-accent);
 }
 
 /* lists the way they are typed: a dash or a number, starting where the text starts */
@@ -255,10 +273,18 @@ article nav ul {
 	padding-inline-start: 0;
 }
 
+/* a line between two parts of a text */
 hr {
-	border-block-start: thin solid;
+	border-block-start: var(--line-sm) var(--line-style) var(--color-accent);
 }
 
 blockquote {
-	padding-inline-start: var(--size-lg);
+	padding-inline-start: 2ch;
+	border-inline-start: var(--line-md) var(--line-style) var(--color-accent);
+}
+
+/* what follows the text is set apart by a line and by white space */
+aside {
+	margin-block-start: calc(var(--size-title) * 2);
+	border-block-start: var(--line-md) var(--line-style) var(--color-accent);
 }

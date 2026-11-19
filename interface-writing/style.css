@@ -1,2 +1,4 @@
+/* the one thing that is different on this page: its kind of line */
 :root {
+	--line-style: solid;
 }

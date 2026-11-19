@@ -1,4 +1,6 @@
+/* the one thing that is different on this page: its kind of line */
 :root {
+	--line-style: double;
 }
 
 /* the lines of the poem stand close together, the room is between its groups */
