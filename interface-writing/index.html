@@ -48,10 +48,14 @@
 						</ul>
 					</nav>
 				</header>
+				<!--
+					removing the <em> on longer sentences and use <strong> following our description above
+					exclude "." for strong highlight as this is not the full sentence
+				-->
 				<p>
 					The web and the world are full of instructions. Everywhere
 					you go, signs and people are
-					<em>telling you what to do.</em>
+					<strong>telling you what to do</strong>.
 				</p>
 				<ol>
 					<li>Walk. Don’t walk.</li>
@@ -65,7 +69,7 @@
 						your name.
 					</li>
 				</ol>
-				<p>You get the idea. <em>So bossy.</em></p>
+				<p>You get the idea. <strong>So bossy.</strong></p>
 				<hr />
 				<p>Think about the app you’re building right now.</p>
 				<p>
@@ -73,11 +77,16 @@
 					do? What are you allowing them to do? What are the rules and
 					dead-ends? What sort of language do you use to guide people?
 				</p>
+				<!--
+					Adding <dfn> tag
+					Adding <em> to highlight
+				-->
 				<p>
 					Whatever you’re building, you need to think about the
 					content in the database and the instructions around it. I
-					call those things <em>interface writing</em>. Some people
-					call them <em>microcopy</em> since they’re usually short.
+					call those things <em><dfn>interface writing</dfn></em
+					>. Some people call them <em><dfn>microcopy</dfn></em> since
+					they’re usually short.
 				</p>
 				<section>
 					<h2>Interface writing</h2>
@@ -94,11 +103,14 @@
 						<li>tooltips</li>
 						<li>transactional emails</li>
 					</ul>
+					<!--
+						Adding <i> as to represent idiomatic text, technical terms, taxonomical designations, etc.
+					-->
 					<p>
 						From navigation links and buttons to product tours,
-						forms, and error messages—every string in your database
-						is an instruction. These are your signposts, and they
-						grab your reader’s attention.
+						forms, and error messages—every <i>string</i> in your
+						database is an instruction. These are your signposts,
+						and they grab your reader’s attention.
 					</p>
 					<p>
 						As developers and writers, you have a lot of power. The
@@ -113,49 +125,62 @@
 					</p>
 
 					<hr />
+					<!--
+						Adding <abbr>
+						Replaced others via search
+					-->
 					<p>
 						Let me tell you a story. This is my dad. He’s a test
 						engineer. He works on semiconductors and develops tests
 						for parts and batteries. So growing up, we always had
-						computers around the house and the latest in PC
+						computers around the house and the latest in
+						<abbr title="personal computer">PC</abbr>
 						technology.
 					</p>
 					<p>
-						We used to have this program called Dr. Sbaitso, which
-						you may have heard of. It was a computerized
-						psychologist slash artificial intelligence program
-						designed to show off sound cards, but I thought it was a
-						game and used to play with it for hours.
+						We used to have this program called
+						<abbr title="Doctor">Dr.</abbr>
+						Sbaitso, which you may have heard of. It was a
+						computerized psychologist slash artificial intelligence
+						program designed to show off sound cards, but I thought
+						it was a game and used to play with it for hours.
 					</p>
 					<p>
-						This is what it looked like. A typical, boring DOS
+						This is what it looked like. A typical, boring
+						<abbr title="Disk Operating System">DOS</abbr>
 						interface.
 					</p>
 					<p>
-						Dr. Sbaitso would tell me what to do and I’d tell him
-						about my 9-year-old problems. At the time, I was usually
-						hungry or tired or bored. So I would answer in one of
-						three ways.
+						<abbr title="Doctor">Dr.</abbr> Sbaitso would tell me
+						what to do and I’d tell him about my 9-year-old
+						problems. At the time, I was usually hungry or tired or
+						bored. So I would answer in one of three ways.
 					</p>
+					<!--
+						Adding <q> to the quotations
+					-->
 					<p>
-						And then he would ask, “Why are you bored?” or “Are you
-						sure you are bored?” And then I would say, yes, I’m sure
-						and start repeating myself. Next thing I know, he’s
-						shouting a zen koan at me like this:
+						And then he would ask, <q>Why are you bored?</q> or
+						<q>Are you sure you are bored?</q> And then I would say,
+						yes, I’m sure and start repeating myself. Next thing I
+						know, he’s shouting a <i>zen koan</i> at me like this:
 					</p>
 					<p>
 						And this would result in me having a tiny existential
 						freakout. I would get sick of that topic and switch over
 						to cussing or saying something inappropriate. And if I
-						did that long enough, Dr. Sbaitso would throw a
+						did that long enough,
+						<abbr title="Doctor">Dr.</abbr> Sbaitso would throw a
 						<a href="https://www.youtube.com/watch?v=1GaWfCWcW3M"
-							>parity error</a
+							><i>parity error</i></a
 						>.
 					</p>
 					<p>
 						The reason I bring this up is that it shapes how I think
-						about interface writing. Dr. Sbaitso was pre-programmed
-						with all of these different strings to respond with.
+						about interface writing.
+						<abbr title="Doctor">Dr.</abbr> Sbaitso was
+						pre-programmed with all of these different strings to
+						respond with.
 					</p>
 					<p>
 						And while most of them were cold, poorly punctuated, and
@@ -174,22 +199,40 @@
 						That makes it easier to show people around, ask for more
 						of their time, or get them to take a particular action.
 					</p>
-					<p>
-						In his essay
-						<a
-							href="https://medium.com/weird-future/we-have-always-coded-2acc5ba75929"
-							>We Have Always Coded</a
-						>, Tim Maly says:
-					</p>
-					<blockquote>
-						<p>
-							“It is no coincidence that many women have compared
-							weaving code to instructing a child. With both kids
-							and computers, you must carefully think through what
-							you want them to do, and then carefully phrase your
-							commands.”
-						</p>
-					</blockquote>
+					<!--
+
+						Adding fig description: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure
+						Using <figcaption>
+						Adding <cite> to the title of the essay
+						Adding the source as an attribute to <blockquote>: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote
+					-->
+					<figure>
+						<figcaption>
+							<p>
+								In his essay
+								<cite
+									><a
+										href="https://medium.com/weird-future/we-have-always-coded-2acc5ba75929"
+										>We Have Always Coded</a
+									></cite
+								>, Tim Maly says:
+							</p>
+						</figcaption>
+						<blockquote
+							cite="https://medium.com/weird-future/we-have-always-coded-2acc5ba75929"
+						>
+							<p>
+								<q
+									>It is no coincidence that many women have
+									compared weaving code to instructing a
+									child. With both kids and computers, you
+									must carefully think through what you want
+									them to do, and then carefully phrase your
+									commands.</q
+								>
+							</p>
+						</blockquote>
+					</figure>
 					<p>
 						From a high level, these are my goals when I’m writing
 						strings:
@@ -207,9 +250,10 @@
 						important.
 					</p>
 					<p>
-						Frank Chimero says, “Every form is a question.” What are
-						you asking through forms and flows? How can you make
-						those questions meaningful and generous for your users?
+						Frank Chimero says,
+						<q>Every form is a question.</q> What are you asking
+						through forms and flows? How can you make those
+						questions meaningful and generous for your users?
 					</p>
 					<p>Here are some examples of things you might be asking:</p>
 					<ul class="questions">
@@ -234,8 +278,8 @@
 						Each of these interactions should feel like a
 						conversation between two people who trust each other and
 						deserve each other’s trust. It can’t be one-sided.
-						Unless you want to be cold like Dr. Sbaitso or creepy
-						like
+						Unless you want to be cold like
+						<abbr title="Doctor">Dr.</abbr> Sbaitso or creepy like
 						<a href="https://en.wikipedia.org/wiki/HAL_9000">HAL</a
 						>, you need to take the time to think about these
 						prompts and put yourself in the reader’s shoes. So let’s
@@ -304,8 +348,8 @@
 							them accomplish their goal.
 						</p>
 						<p>
-							Remember that you’re working with hypertext. You can
-							include links or images to make your point.
+							Remember that you’re working with <i>hypertext</i>.
+							You can include links or images to make your point.
 						</p>
 						<p>
 							Here’s an example from
@@ -320,8 +364,9 @@
 							Every now and then, check your terms for clarity
 							too. Make a list of the buttons and navigation links
 							on your site to make sure they’re consistent. Some
-							people call this a <em>nomenclature audit</em>. Here
-							are some examples from
+							people call this a
+							<em><dfn>nomenclature audit</dfn></em
+							>. Here are some examples from
 							<a href="https://basecamp.com">Basecamp</a>:
 						</p>
 						<ul>
@@ -348,17 +393,25 @@
 							and match the language your users relate to. If you
 							call something “notifications” in one place, call
 							them “notifications” everywhere. That will help you
-							reduce cognitive load on your readers and save money
-							on translations, too.
+							reduce <i>cognitive load</i> on your readers and
+							save money on translations, too.
 						</p>
 					</section>
 					<section>
 						<h3>Turn your chair.</h3>
+						<!--
+							Add a new strong for our highlight, including the "." as this is the full sentence
+							Keeping <em> on the single words to and at, to capture the authors original intent
+						-->
 						<p>
 							Shift your focus to your readers.
-							<em>Talk to them, not at them</em>. Use positive
-							language and avoid yammering on about your company
-							or your interface. The system isn’t the point.
+							<strong
+								>Talk <em>to</em> them, not
+								<em>at</em> them.</strong
+							>
+							Use positive language and avoid yammering on about
+							your company or your interface. The system isn’t the
+							point.
 						</p>
 
 						<p>
@@ -385,21 +438,27 @@
 								>example from Oyster</a
 							>, a book subscription service:
 						</p>
+						<!--
+							Adding quotes as html tag <q>
+						-->
 						<p class="example">
 							I signed up for their trial and they sent me a link
 							to their mobile app. But instead of talking about
 							themselves or explaining the features, they’re
-							helping me get right to it. They say, “Why are you
-							still reading this email? Download the app and dive
-							into your first book!” I love that.
+							helping me get right to it. They say,
+							<q
+								>Why are you still reading this email? Download
+								the app and dive into your first book!</q
+							>
+							I love that.
 						</p>
 					</section>
 					<section>
 						<h3>Show you care.</h3>
 						<p>
 							Now’s the time when I’ll tell you
-							<em>what not to do</em>, since some people find that
-							useful.
+							<strong>what <em>not</em> to do</strong>, since some
+							people find that useful.
 						</p>
 						<p>
 							<strong
@@ -415,15 +474,19 @@
 							the bullshit. You don’t have to be hip or clever,
 							but you do have to be nice.
 						</p>
+
+						<!--
+							Adding technical <i>
+						-->
 						<p>
 							<strong
 								>Don’t assume dichotomies or binaries will do
 								the trick.</strong
 							>
-							Not everything will fit into a boolean. Real life is
-							complicated. As an example, some people are neither
-							male nor female. They’re still people and they
-							deserve our consideration.
+							Not everything will fit into a <i>boolean</i>. Real
+							life is complicated. As an example, some people are
+							neither male nor female. They’re still people and
+							they deserve our consideration.
 						</p>
 						<p>
 							<strong>Don’t interrupt.</strong> Keep things
@@ -472,19 +535,31 @@
 							your work. You have more readers than most published
 							authors! Be proud and careful with that power.
 						</p>
-						<p>
-							As Paul Ford says in
-							<a
-								href="https://web.archive.org/web/20130901000000*/https://contentsmagazine.com/articles/10-timeframes/"
-								>10 Timeframes</a
-							>:
-						</p>
-						<blockquote>
-							<p>
-								“The only unit of time that matters is
-								heartbeats. The time you spend is not your own.”
-							</p>
-						</blockquote>
+						<!-- adding fig description: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure
+							following learnings from spread
+						-->
+						<figure>
+							<figcaption>
+								<p>
+									As Paul Ford says in
+									<cite
+										><a
+											href="https://web.archive.org/web/20130901000000*/https://contentsmagazine.com/articles/10-timeframes/"
+											>10 Timeframes</a
+										></cite
+									>:
+								</p>
+							</figcaption>
+							<blockquote
+								cite="https://web.archive.org/web/20130901000000*/https://contentsmagazine.com/articles/10-timeframes/"
+							>
+								<p>
+									“The only unit of time that matters is
+									heartbeats. The time you spend is not your
+									own.”
+								</p>
+							</blockquote>
+						</figure>
 					</section>
 					<section>
 						<h3>Write iteratively.</h3>
@@ -500,7 +575,8 @@
 							emails or an errors folder for your error messages.
 							You can do that in Ruby with your localization file.
 							Make it easy for yourself and your team to keep
-							things up to date. If you’re writing QA tests,
+							things up to date. If you’re writing
+							<abbr title="quality assurance">QA</abbr> tests,
 							please don’t hard code strings into them. Start with
 							the assumption that the copy will change.
 						</p>
@@ -534,15 +610,17 @@
 							From here, I usually narrow it down to two or three
 							options. Writing copy variations makes it easier to
 							come up with something good, and it also gives you a
-							place to start when you’re A/B testing. Don’t be
-							afraid to test calls to action and navigation
+							place to start when you’re <i>A/B testing</i>. Don’t
+							be afraid to test calls to action and navigation
 							labels. Those little details add up to huge
 							improvements in conversion and engagement.
 						</p>
 						<p>
 							You should
-							<em>never test something you wouldn’t ship</em>.
-							Don’t throw your principles out for numbers. Your
+							<strong
+								><em>never</em> test something you wouldn’t
+								ship</strong
+							>. Don’t throw your principles out for numbers. Your
 							readers don’t know a test from a normal piece of
 							text. If you’re not comfortable with a particular
 							phrase, it doesn’t belong in a test.
@@ -564,39 +642,53 @@
 			</article>
 			<aside id="further-reading">
 				<h2>Further Reading</h2>
+				<!--
+					Adding <cite>
+				-->
 				<ul>
 					<li>
-						<a href="https://nicelysaid.co"
-							>Nicely Said: Writing for the Web with Style and
-							Purpose</a
+						<cite
+							><a href="https://nicelysaid.co"
+								>Nicely Said: Writing for the Web with Style and
+								Purpose</a
+							></cite
 						>
 					</li>
 					<li>
-						<a href="https://gist.github.com/nicoleslaw/2155621"
-							>Tiny Content Framework</a
+						<cite
+							><a
+								href="https://gist.github.com/nicoleslaw/2155621"
+								>Tiny Content Framework</a
+							></cite
 						>
 					</li>
 					<li>
-						<a
-							href="https://www.nicolefenton.com/writing-for-beginners"
-							>Writing for Beginners</a
+						<cite
+							><a
+								href="https://www.nicolefenton.com/writing-for-beginners"
+								>Writing for Beginners</a
+							></cite
 						>
 					</li>
 					<li>
-						<a
-							href="https://www.swellcontent.com/2012/02/baby-steps-to-better-product-content/"
-							>Baby Steps to Better Product Content</a
+						<cite
+							><a
+								href="https://www.swellcontent.com/2012/02/baby-steps-to-better-product-content/"
+								>Baby Steps to Better Product Content</a
+							></cite
 						>
 					</li>
 					<li>
-						<a
-							href="https://www.swellcontent.com/2012/04/working-with-developers/"
-							>Working on Content with Developers</a
+						<cite
+							><a
+								href="https://www.swellcontent.com/2012/04/working-with-developers/"
+								>Working on Content with Developers</a
+							></cite
 						>
 					</li>
 					<li>
 						<a href="https://www.x-entertainment.com/articles/0952/"
-							>Dr. Sbaitso</a
+							><abbr title="Doctor">Dr.</abbr> Sbaitso</a
 						>
 						from Creative Labs
 					</li>
