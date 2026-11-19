@@ -20,60 +20,159 @@
 
 	/*
 		New ideation how to set sizes
+		If we change the font, let us readjust only --size-md and/or ratio
 	*/
-	--size-md: 1.25rem;
-	--ratio: 1.5;
+	--size-md: 1.1rem;
+	--ratio: 1.25;
+	--size-sm: calc(var(--size-md) / var(--ratio));
 	--size-lg: calc(var(--size-md) * var(--ratio));
 	--size-xl: calc(var(--size-lg) * var(--ratio));
 
-	/*
-		Change this later to x characters wide of our font size
-	*/
+	--size-title: 3.35rem; /* a single element that is one off: the title */
 
-	--width-page: calc(var(--size-md) * 32);
+	/* regular for the text, bold highlights */
+	--weight-md: 400;
+	--weight-lg: 700;
+
+	/*
+		62 characters wide
+		https://typography-interaction-2627.github.io/topic/box-model/#constrained-by-min-max-
+	*/
+	--width-page: 62ch;
 }
 
 body {
-	max-width: var(--width-page);
-	margin-inline: auto;
-	padding: var(--size-md);
+	padding-inline: var(--size-md);
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	font-family: var(--font-text);
 	font-size: var(--size-md);
-	line-height: 1.5;
+	font-weight: var(--weight-md);
+	line-height: 1.6;
+}
+
+/*
+	setting max width to characters
+	on a small screen we make use of the most width
+
+	auto calculates space for inline
+	does not apply to mobile as max-width is not reached
+*/
+body > header,
+main,
+body > footer {
+	max-width: var(--width-page);
+	margin-inline: auto;
+}
+
+main {
+	padding-block: calc(var(--size-title) * 2);
+}
+
+/*
+	The top: a row of small things (links, date), then the title
+	The end mirrors it: the author, then a row of small things
+*/
+body > header,
+body > footer {
+	display: flex;
+	flex-wrap: wrap; /* on a small screen the row breaks by itself */
+	justify-content: space-between;
+	align-items: baseline; /* all on the same line: baseline */
+	column-gap: var(--size-xl);
+
+	p {
+		margin-block-end: 0;
+		font-size: var(--size-sm);
+	}
+}
+
+body > header {
+	padding-block: var(--size-xl) var(--size-title);
+}
+
+body > footer {
+	padding-block: var(--size-title) var(--size-xl);
+}
+
+/*
+	adding weight to current page to distinguish
+
+	https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors
+	<a> elements with a title attribute
+	a[title] or e.g. a[href="https://example.org"]
+*/
+.binding {
+	font-size: var(--size-sm);
+
+	a {
+		text-decoration: none;
+	}
+
+	a[aria-current="page"] {
+		font-weight: var(--weight-lg);
+	}
 }
 
 h1,
 h2,
 h3 {
 	font-family: var(--font-header);
-	font-weight: bold;
+	font-weight: var(--weight-lg);
 	line-height: 1.2;
+	text-wrap: balance; /* balance sentence length */
 }
 
+/* the title at the top mirrors the author at the bottom: same size and style for our footer moment */
+h1,
+footer .author {
+	flex-basis: 100%; /* a row of its own */
+	font-weight: var(--weight-lg);
+	line-height: 1.1;
+	text-wrap: balance;
+
+	/*
+		a tenth of the window, up to --size-title
+		https://typography-interaction-2627.github.io/topic/responsive/#clamp
+	*/
+	font-size: min(var(--size-title), 10vw);
+
+}
+
+/* the same room at the top and at the end */
 h1 {
-	font-size: var(--size-xl);
+	margin-block-start: var(--size-title);
+}
+
+footer .author {
+	margin-block-end: var(--size-title);
 }
 
 h2 {
 	font-size: var(--size-lg);
 }
 
+/* more room above a header than below it */
 h2,
 h3 {
-	margin-block-start: var(--size-xl);
+	margin-block: var(--size-title) var(--size-sm);
 }
 
-h1,
-h2,
-h3,
 p,
 ul,
 ol,
 blockquote,
+figure,
 hr {
-	margin-block-end: var(--size-md);
+	margin-block-end: var(--size-xl);
+}
+
+/*
+	Improve line wrapping to avoid short final lines
+	https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-wrap
+*/
+p {
+	text-wrap: pretty;
 }
 
 a {
@@ -81,12 +180,79 @@ a {
 }
 
 strong {
-	font-weight: bold;
+	font-weight: var(--weight-lg);
 }
 
-em {
+/*
+	<em> for a stressed word, <i> for a term, <cite> for a title,
+	<dfn> for the word we explain: all italic
+*/
+em,
+i,
+cite,
+dfn {
 	font-style: italic;
-	color: var(--color-accent);
+}
+
+/*
+	the dotted line tells that pointing at the short form shows the long one
+	cursor - help as style default
+	https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/cursor
+*/
+abbr[title] {
+	text-decoration: underline dotted;
+	text-underline-offset: 0.25em;
+	cursor: help;
+}
+
+/* a date stays on one line */
+time {
+	white-space: nowrap;
+}
+
+/* the sentence that leads into a quote stays close to it */
+figure {
+	figcaption p {
+		margin-block-end: var(--size-sm);
+	}
+
+	blockquote,
+	blockquote p:last-child {
+		margin-block-end: 0;
+	}
+}
+
+/* what a linked picture shows */
+.example {
+	padding-inline-start: 2ch;
+}
+
+/* lists the way they are typed: a dash or a number, starting where the text starts */
+article ul,
+aside ul {
+	list-style-type: "– ";
+	padding-inline-start: 2ch;
+}
+
+article ol {
+	list-style-type: decimal;
+	padding-inline-start: 3ch;
+}
+
+.questions {
+	list-style-type: "? ";
+}
+
+.binding ul,
+article nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 2ch;
+}
+
+article nav ul {
+	list-style: none;
+	padding-inline-start: 0;
 }
 
 hr {
