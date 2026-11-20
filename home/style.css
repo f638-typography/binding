@@ -1,1 +1,38 @@
+/*
+	Each text stands on the kind of line of its own page
+	adjust here and in the indivdual style.css files in the folders
+*/
+.interface-writing {
+	--line-style: solid;
+}
 
+.hover-states {
+	--line-style: dashed;
+}
+
+.essay-thesis {
+	--line-style: double;
+}
+
+/* the lines go from one side of the window to the other */
+main {
+	padding: 0;
+}
+
+main li {
+	padding-block: var(--size-xl);
+	padding-inline: var(--width-side);
+	border-block-end: var(--line-md) var(--line-style) var(--color-accent);
+
+	/* as big as the title of its page */
+	a {
+		font-size: min(var(--size-title), 10vw);
+		line-height: 1.1;
+		text-decoration: none;
+	}
+
+	p {
+		margin-block-end: 0;
+		font-size: var(--size-sm);
+	}
+}
